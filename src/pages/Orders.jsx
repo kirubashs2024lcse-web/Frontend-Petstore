@@ -52,7 +52,7 @@ const Orders = () => {
               <div key={order._id} className="order-card">
                 <div className="order-header">
                   <div>
-                    <p className="order-id">Order ID: <span>{order._id}</span></p>
+                    <p className="order-id">Order: <span>#{order._id.slice(-8).toUpperCase()}</span></p>
                     <p className="order-date">{new Date(order.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
                   </div>
                   <span className={`status-badge ${isCancelled ? 'rejected' : 'approved'}`}>{order.status}</span>

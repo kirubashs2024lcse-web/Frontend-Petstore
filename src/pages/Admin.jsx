@@ -140,7 +140,7 @@ const Admin = () => {
                   onChange={(e) => editProduct ? setEditProduct({ ...editProduct, name: e.target.value }) : setNewProduct({ ...newProduct, name: e.target.value })} required />
               </div>
               <div className="form-group">
-                <label>Price ($)</label>
+                <label>Price (₹)</label>
                 <input type="number" step="0.01"
                   value={editProduct ? editProduct.price : newProduct.price}
                   onChange={(e) => editProduct ? setEditProduct({ ...editProduct, price: e.target.value }) : setNewProduct({ ...newProduct, price: e.target.value })} required />
@@ -204,9 +204,9 @@ const Admin = () => {
               <div key={order._id} className="order-card">
                 <div className="order-header">
                   <div>
-                    <p className="order-id">Order ID: <span>{order._id}</span></p>
+                    <p className="order-id">Order: <span>#{order._id.slice(-8).toUpperCase()}</span></p>
                     <p className="order-date">{new Date(order.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
-                    <p><strong>Customer:</strong> {order.userName} · {order.userEmail}</p>
+                    <p style={{ fontSize: '0.85rem', color: '#555', marginTop: '0.2rem' }}><strong>Customer:</strong> {order.userName} · {order.userEmail}</p>
                   </div>
                   <div className="order-status-update">
                     <select
