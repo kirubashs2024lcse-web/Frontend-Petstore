@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-brand">🐾 PetStore</Link>
+      <Link to="/" className="navbar-brand">🐾Mr-PetStore</Link>
       <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/adopt">Adopt Me</Link>
