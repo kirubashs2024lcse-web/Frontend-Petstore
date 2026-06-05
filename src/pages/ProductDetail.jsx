@@ -28,7 +28,7 @@ const ProductDetail = () => {
         <div className="product-detail-info">
           <span className="product-category">{product.category}</span>
           <h1>{product.name}</h1>
-          <p className="product-price large">${product.price?.toFixed(2)}</p>
+          <p className="product-price large">₹{product.price?.toFixed(2)}</p>
           <p>{product.description}</p>
           <div className="qty-row">
             <label>Qty:</label>

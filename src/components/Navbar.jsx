@@ -17,6 +17,7 @@ const Navbar = () => {
         <Link to="/adopt">Adopt Me</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/become-seller">Become a Seller</Link>
+        {user && <Link to="/orders">My Orders</Link>}
         {user?.role === 'admin' && <Link to="/admin">Admin</Link>}
         {user ? (
           <>

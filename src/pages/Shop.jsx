@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
       <div className="product-info">
         <span className="product-category">{product.category}</span>
         <h3 onClick={() => navigate(`/shop/${product._id}`)} style={{ cursor: 'pointer' }}>{product.name}</h3>
-        <p className="product-price">${product.price.toFixed(2)}</p>
+        <p className="product-price">₹{product.price.toFixed(2)}</p>
         <div className="product-actions">
           <button className="btn btn-outline" onClick={() => navigate(`/shop/${product._id}`)}>View</button>
           <button className="btn btn-primary" onClick={() => addToCart(product)}>Add to Cart</button>
