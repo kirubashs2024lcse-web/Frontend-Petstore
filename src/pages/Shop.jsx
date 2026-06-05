@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   return (
     <div className="product-card">
-      <img src={product.image ? `${BASE_URL}${product.image}` : 'https://via.placeholder.com/280x200?text=No+Image'} alt={product.name} onClick={() => navigate(`/shop/${product._id}`)} style={{ cursor: 'pointer' }} />
+      <img src={product.image || 'https://via.placeholder.com/280x200?text=No+Image'} alt={product.name} onClick={() => navigate(`/shop/${product._id}`)} style={{ cursor: 'pointer' }} />
       <div className="product-info">
         <span className="product-category">{product.category}</span>
         <h3 onClick={() => navigate(`/shop/${product._id}`)} style={{ cursor: 'pointer' }}>{product.name}</h3>

@@ -24,7 +24,7 @@ const ProductDetail = () => {
     <div className="page">
       <button className="btn btn-outline back-btn" onClick={() => navigate('/shop')}>← Back to Shop</button>
       <div className="product-detail">
-        <img src={product.image ? `${BASE_URL}${product.image}` : 'https://via.placeholder.com/400x300?text=No+Image'} alt={product.name} />
+        <img src={product.image || 'https://via.placeholder.com/400x300?text=No+Image'} alt={product.name} />
         <div className="product-detail-info">
           <span className="product-category">{product.category}</span>
           <h1>{product.name}</h1>

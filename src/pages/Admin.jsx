@@ -11,8 +11,7 @@ const Admin = () => {
   const [tab, setTab] = useState('submissions');
   const [submissions, setSubmissions] = useState([]);
   const [products, setProducts] = useState([]);
-  const [newProduct, setNewProduct] = useState({ name: '', price: '', category: '', description: '' });
-  const [productImage, setProductImage] = useState(null);
+  const [newProduct, setNewProduct] = useState({ name: '', price: '', category: '', description: '', image: '' });
   const [msg, setMsg] = useState('');
 
   useEffect(() => {
@@ -40,13 +39,11 @@ const Admin = () => {
     e.preventDefault();
     const data = new FormData();
     Object.keys(newProduct).forEach((k) => data.append(k, newProduct[k]));
-    if (productImage) data.append('image', productImage);
     try {
       const res = await API.post('/products', data);
       setProducts((prev) => [...prev, res.data]);
       setMsg('Product added successfully!');
-      setNewProduct({ name: '', price: '', category: '', description: '' });
-      setProductImage(null);
+      setNewProduct({ name: '', price: '', category: '', description: '', image: '' });
     } catch (err) { console.error(err); }
   };
 
@@ -112,8 +109,8 @@ const Admin = () => {
                 <input value={newProduct.category} onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })} required />
               </div>
               <div className="form-group">
-                <label>Image</label>
-                <input type="file" accept="image/*" onChange={(e) => setProductImage(e.target.files[0])} />
+                <label>Image URL</label>
+                <input type="url" placeholder="https://example.com/product.jpg" value={newProduct.image} onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })} />
               </div>
             </div>
             <div className="form-group">
