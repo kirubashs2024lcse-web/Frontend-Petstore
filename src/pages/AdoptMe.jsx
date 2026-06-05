@@ -29,7 +29,7 @@ const AdoptMe = () => {
       <div className="pets-grid">
         {filtered.map((pet) => (
           <div key={pet._id} className="pet-card">
-            <img src={`${BASE_URL}${pet.image}`} alt={pet.petName} />
+            <img src={pet.image} alt={pet.petName} />
             <div className="pet-info">
               <h3>{pet.petName}</h3>
               <p className="pet-meta">{pet.species} · {pet.breed} · {pet.age} yr{pet.age !== 1 ? 's' : ''}</p>

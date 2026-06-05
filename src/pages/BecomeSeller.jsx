@@ -12,7 +12,7 @@ const BecomeSeller = () => {
     phone: user?.phone || '',
     petName: '', species: 'Dog', breed: '', age: '', description: '',
   });
-  const [image, setImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
@@ -28,12 +28,9 @@ const BecomeSeller = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!image) { setError('Please upload a pet image.'); return; }
-    const data = new FormData();
-    Object.keys(form).forEach((k) => data.append(k, form[k]));
-    data.append('image', image);
+    if (!imageUrl) { setError('Please provide a pet image URL.'); return; }
     try {
-      await API.post('/pets/submit', data);
+      await API.post('/pets/submit', { ...form, image: imageUrl });
       setSubmitted(true);
     } catch {
       setError('Submission failed. Please try again.');
@@ -100,8 +97,8 @@ const BecomeSeller = () => {
           <textarea name="description" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={4} required />
         </div>
         <div className="form-group">
-          <label>Pet Image</label>
-          <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} required />
+          <label>Pet Image URL</label>
+          <input type="url" placeholder="https://example.com/pet.jpg" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
         </div>
         {error && <p className="error-msg">{error}</p>}
         <button type="submit" className="btn btn-primary">Submit for Review</button>

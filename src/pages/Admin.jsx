@@ -75,7 +75,7 @@ const Admin = () => {
                   <p><strong>Breed:</strong> {s.breed} · <strong>Age:</strong> {s.age} yr(s)</p>
                   <p><strong>Owner:</strong> {s.ownerName} · {s.email}</p>
                   <p>{s.description}</p>
-                  {s.image && <img src={`${BASE_URL}${s.image}`} alt={s.petName} className="submission-img" />}
+                  {s.image && <img src={s.image} alt={s.petName} className="submission-img" />}
                 </div>
                 <div className="submission-actions">
                   <span className={`status-badge ${s.status}`}>{s.status}</span>
