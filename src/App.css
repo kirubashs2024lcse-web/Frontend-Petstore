@@ -155,8 +155,9 @@ a { text-decoration: none; color: inherit; }
 .status-badge.approved { background: #d1fae5; color: #065f46; }
 .status-badge.rejected { background: #fee2e2; color: #991b1b; }
 .admin-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-.admin-table th, .admin-table td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
+.admin-table th, .admin-table td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; vertical-align: middle; }
 .admin-table th { background: #f7fafc; font-weight: 600; color: #4a5568; }
+.admin-table td img { width: 55px; height: 45px; object-fit: cover; border-radius: 4px; display: block; }
 
 .empty-msg { color: #718096; text-align: center; padding: 2rem; }
 .auth-prompt { text-align: center; }
@@ -229,3 +230,5 @@ a { text-decoration: none; color: inherit; }
 .modal-body p { font-size: 0.95rem; color: #555; margin-bottom: 0.4rem; }
 .modal-body a { color: #2d6a4f; }
 .modal-body hr { border: none; border-top: 1px solid #eee; margin: 1rem 0; }
+
+.order-item img { width: 55px; height: 55px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }

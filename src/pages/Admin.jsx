@@ -178,7 +178,7 @@ const Admin = () => {
             <tbody>
               {products.map((p) => (
                 <tr key={p._id}>
-                  <td><img src={p.image || 'https://via.placeholder.com/60x50?text=N/A'} alt={p.name} style={{ width: 60, height: 50, objectFit: 'cover', borderRadius: 4 }} /></td>
+                  <td><img src={p.image || 'https://via.placeholder.com/55x45?text=N/A'} alt={p.name} /></td>
                   <td>{p.name}</td>
                   <td>{p.category}</td>
                   <td>₹{parseFloat(p.price).toFixed(2)}</td>
