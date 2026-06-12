@@ -45,6 +45,7 @@ a { text-decoration: none; color: inherit; }
 .btn-secondary:hover { background: #f0faf4; }
 .btn-outline { background: transparent; color: #2d6a4f; border: 1px solid #2d6a4f; }
 .btn-outline:hover { background: #f0faf4; }
+.product-actions .btn { width: 100%; }
 .btn-danger { background: #e63946; color: #fff; }
 .btn-danger:hover { background: #c62828; }
 .full-width { width: 100%; }
